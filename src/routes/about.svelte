@@ -22,23 +22,20 @@
 	<h1>About this app</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
+		This app is used for Lighthouse performance scoring as a baseline. The objective is to set a
+		baseline of performance scoring, measuring HTML, CSS, and content.
 	</p>
-
-	<!-- TODO lose the @next! -->
-	<pre>npm init svelte@next</pre>
-
 	<p>
 		The page you're looking at is purely static HTML, with no client-side interactivity needed.
 		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
 		the devtools network panel and reloading.
 	</p>
-
-	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
+	<p> Once we reach close to 100% on scoring metrics, then we can start layering in JavaScript, images, and
+		third party tools for experimentation, marketing, etc. As we we layer in more tools and SDKs, we then
+		get to measure the negative impact to performance.
 	</p>
+
+
 </div>
 
 <style>

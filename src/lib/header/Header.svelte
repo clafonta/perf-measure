@@ -1,15 +1,15 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import { MetaTags } from 'svelte-meta-tags';
+	import { application_name } from '$lib/stores.js'
+
+	import AppName from '$lib/header/AppName.svelte';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+		<a href="/"><AppName type="logo"/></a>
 	</div>
-
 	<nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
@@ -19,9 +19,10 @@
 			<li class:active={$page.url.pathname === '/about'}>
 				<a sveltekit:prefetch href="/about">About</a>
 			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a sveltekit:prefetch href="/todos">Todos</a>
+			<li class:active={$page.url.pathname === '/signin'}>
+				<a sveltekit:prefetch href="/signin">Sign in</a>
 			</li>
+
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
@@ -31,9 +32,58 @@
 	<div class="corner">
 		<!-- TODO put something else here? github link? -->
 	</div>
+	<MetaTags
+			title="{application_name}"
+			titleTemplate="%s | Svelte Meta Tags"
+			description="This example uses more of the available config options."
+			canonical="https://www.canonical.ie/"
+			openGraph={{
+    url: 'https://www.url.ie/a',
+    title: 'Open Graph Title',
+    description: 'Open Graph Description',
+    images: [
+      {
+        url: 'https://www.example.ie/og-image-01.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Og Image Alt'
+      },
+      {
+        url: 'https://www.example.ie/og-image-02.jpg',
+        width: 900,
+        height: 800,
+        alt: 'Og Image Alt Second'
+      },
+      { url: 'https://www.example.ie/og-image-03.jpg' },
+      { url: 'https://www.example.ie/og-image-04.jpg' }
+    ],
+    site_name: 'SiteName'
+  }}
+			twitter={{
+    handle: '@handle',
+    site: '@site',
+    cardType: 'summary_large_image',
+    title: 'Using More of Config',
+    description: 'This example uses more of the available config options.',
+    image: 'https://www.example.ie/twitter-image.jpg',
+    imageAlt: 'Twitter image alt'
+  }}
+			facebook={{
+    appId: '1234567890'
+  }}
+	/>
 </header>
 
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet"/>
+
+<!-- SMUI -->
+<link rel="stylesheet" href="https://unpkg.com/svelte-material-ui/bare.css" />
+
 <style>
+	/* force font */
+	* { font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;  }
+
 	header {
 		display: flex;
 		justify-content: space-between;
@@ -52,11 +102,6 @@
 		height: 100%;
 	}
 
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
-	}
 
 	nav {
 		display: flex;
@@ -121,4 +166,5 @@
 	a:hover {
 		color: var(--accent-color);
 	}
+
 </style>
