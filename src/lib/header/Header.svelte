@@ -75,10 +75,10 @@
 </header>
 
 <!-- Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet" type="text/css" media="screen,handheld"/>
 
 <!-- SMUI -->
-<link rel="stylesheet" href="https://unpkg.com/svelte-material-ui/bare.css" />
+<link href="https://unpkg.com/svelte-material-ui/bare.css" rel="stylesheet" type="text/css" media="screen,handheld" />
 
 <style>
 	/* force font */

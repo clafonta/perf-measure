@@ -65,9 +65,6 @@
     .signin-content {
         padding-bottom: 2em;
     }
-    .signin-content span {
-        font-weight: bolder;
-    }
 
     .signin-content h1 {
         text-align: left;
