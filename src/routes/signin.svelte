@@ -3,7 +3,7 @@
         <div class="content">
             <div class="signin-content">
                 <h1>Sign in</h1>
-                <p>New to <span><AppName />?</span> <a href="signup">Sign up</a>.</p>
+                <p>New to <AppName />? <a href="signup">Sign up</a>.</p>
             </div>
             <div class="signin-field">
                 <Textfield variant="outlined" style="width:100%" bind:value={valueA} label="Email"
@@ -38,12 +38,11 @@
 
     let isPasswordVisible = false;
     let valueA = '';
-    let valueB = '';
     let valueC = '';
 
     let show_password = false;
     $: type = show_password ? 'text' : 'password'
-    let value = '';
+
     let passwordFieldType = 'password';
 
     function handleClick() {
@@ -55,9 +54,6 @@
         }
     }
 
-    function onInput(event) {
-        value = event.target.value
-    }
 </script>
 
 <style>

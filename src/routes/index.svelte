@@ -1,101 +1,145 @@
 <script context="module">
     export const prerender = true;
 </script>
-
-
 <script lang="ts">
     import LayoutGrid, {Cell} from '@smui/layout-grid';
-    import Icon from '@smui/textfield/icon';
+	import Icon from '@smui/textfield/icon';
     import Button, {Label} from '@smui/button';
 	import AppName from '$lib/header/AppName.svelte';
+	import Chip, { Set, Text } from '@smui/chips';
+	import Textfield from '@smui/textfield';
+	let valueA ='';
 
 </script>
-
 <svelte:head>
     <title>Home</title>
 </svelte:head>
 
-
 <section>
-    <div class="goodness">
-		<h1><AppName type="name_and_logo" style="font-size: 50px; color: #ba55d3;"/></h1>
-        <p class="subtext">
-            Flexible business solutions
-            that work for you.
-        </p>
+    <div class="section-blurb">
+		<h1>Flexible business solutions that work for you.</h1>
+		<p>
+			<Button color="primary" variant="unelevated">Get started</Button>
+			<Button color="secondary" variant="outlined">Contact sales</Button>
+		</p>
     </div>
 
-	<div class="lead-content">
+	<div class="section-blurb">
+		<h1>Tools that connect every side of your business.</h1>
 
-		<h2>What size of business are you?</h2>
-		<p class="lead_blurb">Knowing what <i>type</i> or <i>size</i> of business you run will help us give you the information
-			you need. </p>
 	</div>
+	<div class="section-cards">
     <LayoutGrid>
-		<Cell spanDevices={{ desktop: 3, tablet: 4, phone: 6 }}>
+		<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 6 }}>
 			<div class="merchant-type">
-				<div class="merchant-blurb">
-					<span class="merchant-type-name">Individual</span>
-					<span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 2em;"  slot="trailingIcon">person_outline</Icon></span>
+				<div >
+					<span class="merchant-type-name">Commerce</span>
 				</div>
 				<div class="merchant-type-details">
-					<p>Solutions for health, beauty, repair, and other professionals.</p>
-					<p class="element-to-stick-to-bottom">
-						<Button variant="unelevated" color="primary" style="width: 100%">Learn more</Button>
-					</p>
+					<p>Sell in-person, online, or from anywhere. Take secure payments from customers, clients, and more.</p>
+					<p><a href="/about">See commerce solutions<span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 1em;"  slot="trailingIcon">east</Icon></span></a></p>
+					<Set chips={['Point of sale', 'Online store', 'Payments']} let:chip nonInteractive>
+						<Chip {chip}>
+							<Text>{chip}</Text>
+						</Chip>
+					</Set>
 				</div>
 			</div>
 		</Cell>
 
-		<Cell spanDevices={{ desktop: 3, tablet: 4, phone: 6 }}>
+		<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 6 }}>
 			<div class="merchant-type">
-				<div class="merchant-blurb">
-					<span class="merchant-type-name">Small</span>
-					<span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 2em;"  slot="trailingIcon">store</Icon></span>
+				<div >
+					<span class="merchant-type-name">Customers</span>
 				</div>
 				<div class="merchant-type-details">
-					<p>All the retail tools you need, from open to close, in-store and online. </p>
-					<p class="element-to-stick-to-bottom" style="background-color:#b9c6d2; ">
-						<Button variant="outlined" color="secondary" style="width: 100%">Learn more</Button>
-					</p>
+					<p>Keep customers coming back to your business with personal touches and rewards.</p>
+					<p><a href="/about">Explore Customer Directory<span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 1em;"  slot="trailingIcon">east</Icon></span></a></p>
+					<Set chips={['Loyalty program', 'Email marketing', 'Message Hub']} let:chip nonInteractive>
+						<Chip {chip}>
+							<Text>{chip}</Text>
+						</Chip>
+					</Set>
+				</div>
+			</div>
+		</Cell>
+		<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 6 }}>
+			<div class="merchant-type">
+				<div >
+					<span class="merchant-type-name">Banking</span>
+				</div>
+				<div class="merchant-type-details">
+					<p>Access and manage your money as you make it with business banking accounts and services from <AppName /></p>
+					<p><a href="/about">See banking solutions<span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 1em;"  slot="trailingIcon">east</Icon></span></a></p>
+					<Set chips={['Checking', 'Savings', 'Loans']} let:chip nonInteractive>
+						<Chip {chip}>
+							<Text>{chip}</Text>
+						</Chip>
+					</Set>
 				</div>
 			</div>
 		</Cell>
 
-
-
-		<Cell spanDevices={{ desktop: 3, tablet: 4, phone: 6 }}>
+		<Cell spanDevices={{ desktop: 6, tablet: 4, phone: 6 }}>
 			<div class="merchant-type">
-				<div class="merchant-blurb">
-					<span class="merchant-type-name">Medium</span>
-					<span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 2em;"  slot="trailingIcon">business</Icon></span>
+				<div >
+					<span class="merchant-type-name">Staff</span>
 				</div>
 				<div class="merchant-type-details">
-					<p>Solutions for front of the house, back of the house, and everything in between.</p>
-					<p class="element-to-stick-to-bottom" style="background-color: lavender">
-						<Button variant="outlined" style="width: 100%">Learn more</Button>
-					</p>
+					<p>Manage your team with scheduling, timecards, adn full service payroll, all in one plance.</p>
+					<p><a href="/about">Check out Payroll<span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 1em;"  slot="trailingIcon">east</Icon></span></a></p>
+					<Set chips={['Team Management', 'Benefits']} let:chip nonInteractive>
+						<Chip {chip}>
+							<Text>{chip}</Text>
+						</Chip>
+					</Set>
 				</div>
 			</div>
 		</Cell>
-
-        <Cell spanDevices={{ desktop: 3, tablet: 4, phone: 6 }}>
-            <div class="merchant-type">
-                <div class="merchant-blurb">
-                    <span class="merchant-type-name">Large</span>
-                    <span class="merchant-type-icon"><Icon class="material-icons" style="font-size: 2em;"  slot="trailingIcon">public</Icon></span>
-                </div>
-                <div class="merchant-type-details">
-                    <p>Build custom solutions with our scalable and secure platforms.</p>
-                    <p class="element-to-stick-to-bottom">
-                        <Button color="secondary" variant="unelevated" style="width: 100%">Learn more</Button>
-                    </p>
-                </div>
-            </div>
-        </Cell>
-
-
     </LayoutGrid>
+	</div>
+	<div class="section-blurb">
+		<h1>Solution sets for every business type and size.</h1>
+		<div class="lead-content">
+			<h2><a href="/about">Retail <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900;"  slot="trailingIcon">east</Icon></span></a></h2>
+			<p>All the retail tools you need for selling online and instore - from inventory management, exchanges, and more.</p>
+		</div>
+		<div class="lead-content">
+			<h2><a href="/about">Food &amp; beverage <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900;"  slot="trailingIcon">east</Icon></span></a></h2>
+			<p>Tools for front of house, like menus and table management - and back of house, like kitchen displays and delivery.</p>
+		</div>
+		<div class="lead-content">
+			<h2><a href="/about">Professional services <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900;"  slot="trailingIcon">east</Icon></span></a></h2>
+			<p>Integrated tools that help you get paid quickly, deliver better client service, and improve your cash flow.</p>
+		</div>
+		<div class="lead-content">
+			<h2><a href="/about">Large business <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900;"  slot="trailingIcon">east</Icon></span></a></h2>
+			<p>Build custom solutions and deliver great customer experiences wih advanced reporting and more.</p>
+		</div>
+	</div>
+
+	<div class="section-blurb">
+		<h1>Hardware for selling anywhere.</h1>
+
+		<p style="font-size: 25px;">We design and build our hardware in-house, so it all works seamlessly.</p>
+		<p style="font-size: 25px; font-weight: 900;"><a href="/about">Shop all hardware <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900;"  slot="trailingIcon">east</Icon></span></a></p>
+
+	</div>
+
+	<div class="section-blurb">
+		<h1>Get business insights from business experts.</h1>
+		<div class="lead-content">
+			<p style="font-size: 25px; font-weight: 900;">Join our email list to receive advice from other business ownerw, support, articles, tips from industry experts, and more.</p>
+		</div>
+		<div style="padding-bottom: 20px;">
+			<Textfield variant="outlined" style="width: 60%" bind:value={valueA} label="Enter your email"
+					   helperLine$style="width: 100%;">
+			</Textfield>
+			<Button color="primary" variant="unelevated" style="height: 55px;">Get more info</Button>
+			<p>* Please refer to our <a href="/about">Privacy Policy </a> or <a href="/contact">contact us</a> for more details.</p>
+		</div>
+	</div>
+
 
 </section>
 
@@ -105,48 +149,25 @@
         background-color: #fff;
         padding: 1em;
 		position: relative;
+		border-radius: 10px;
+		border: solid 1px;
+		border-color: #b9c6d2;
     }
 
-	.goodness {
-		border-radius: 50% 20% / 10% 40%;
-		box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
-		background-color: #fff;
-		border-style: solid;
-		border-width: 4px;
-		border-color: #ccc;
-		text-align: left;
-		padding: 2em;
-
-	}
-	.goodness h1 {
-		text-align: left;
-		margin: 0;
-		padding: 0;
-	}
-
-    .merchant-blurb {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--mdc-theme-secondary, #fff);
-        color: var(--mdc-theme-on-secondary, #ooo);
-        padding: 1em;
-    }
 	.merchant-type-name {
 		font-size: 2em; font-weight: bolder;
 	}
 	.merchant-type-icon {
-		font-size: 1em; font-weight: bolder;
+		font-size:16px; font-weight: bolder;
+		margin-left: 0;
+		padding-left: 0;
 	}
+
 	.merchant-type-details {
 		min-height: 180px;
 		position: relative;
 	}
-	.element-to-stick-to-bottom {
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-	}
+
 
     section {
         display: flex;
@@ -158,28 +179,40 @@
 
     }
 
-	.subtext {
+
+
+	.section-blurb {
+		max-width: 750px;
 		text-align: left;
-		font-size: 2em;
-		color: #444444;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+	.section-blurb h1{
+		text-align: left;
+	}
+	.section-cards {
+		max-width: 800px;
+	}
+
+	.lead-content {
+		padding-bottom: 1em;
 	}
 	.lead-content h2 {
 		text-align: left;
-		font-size: 2em;
+		font-size: 25px;
 		font-weight: 900;
-		margin-bottom: 5px;
-		margin-top: 80px;
-	}
-
-	.lead_blurb {
-		font-size: 20px;
-		color: #444444;
+		color: magenta;
 	}
 
     .lead-content p {
+		max-width: 500px;
         text-align: left;
         padding: 0;
-        margin: 0;
+        margin-bottom: 20px;
     }
+
+
+
+
 
 </style>

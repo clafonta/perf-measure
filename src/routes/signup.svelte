@@ -3,7 +3,7 @@
         <div class="content">
             <div class="signin-content">
                 <h1>Let’s create your account.</h1>
-                <p><Icon class="material-icons">east</Icon> Signing up for <span>XYZ</span> is fast and free.</p>
+                <p><Icon class="material-icons">east</Icon> Signing up for <AppName /> is fast and free.</p>
                 <p><Icon class="material-icons">east</Icon> No commitments or long-term contracts.</p>
             </div>
             <div class="signin-field">
@@ -28,15 +28,14 @@
             <div class="signin-content">
                 <FormField>
                     <Checkbox bind:checked touch />
-                    <span> I agree to XYZ's <a href="#/">Terms</a>, <a href="#/">Privacy Policy</a>, and <a href="#/">E-Sign Consent</a>.</span>
+                    <span> I agree to <AppName />'s <a href="#/">Terms</a>, <a href="#/">Privacy Policy</a>, and <a href="#/">E-Sign Consent</a>.</span>
                 </FormField>
             </div>
             <div class="signin-content">
                 <Button variant="unelevated" style="width: 100%">Continue</Button>
             </div>
             <div>
-                <p>Already have a XYZ account? <a href="/signin">Sign in</a>.</p>
-
+                <p>Already have a <AppName /> account? <a href="/signin">Sign in</a>.</p>
             </div>
         </div>
     </Cell>
@@ -45,22 +44,21 @@
 <script lang="ts">
     import LayoutGrid, {Cell} from '@smui/layout-grid';
     import Textfield from '@smui/textfield';
-    import Button, {Label} from '@smui/button';
+    import Button from '@smui/button';
     import Icon from '@smui/textfield/icon';
     import Checkbox from '@smui/checkbox';
     import FormField from '@smui/form-field';
+    import AppName from '$lib/header/AppName.svelte';
 
     let isPasswordVisible = false;
     let valueA = '';
     let valueB = '';
     let valueC = '';
-
     let checked = false;
 
 
     let show_password = false;
     $: type = show_password ? 'text' : 'password'
-    let value = '';
     let passwordFieldType = 'password';
 
     function handleClick() {
@@ -70,10 +68,6 @@
         } else {
             passwordFieldType = 'password';
         }
-    }
-
-    function onInput(event) {
-        value = event.target.value
     }
 </script>
 

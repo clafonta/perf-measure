@@ -8,7 +8,7 @@
 
 <header>
 	<div class="corner">
-		<a href="/"><AppName type="logo"/></a>
+		<a href="/"><AppName type="name_and_logo" style="font-size: 20px; color: #ba55d3; "/></a>
 	</div>
 	<nav>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
@@ -95,9 +95,7 @@
 	}
 
 	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+
 		width: 100%;
 		height: 100%;
 	}
@@ -165,6 +163,7 @@
 
 	a:hover {
 		color: var(--accent-color);
+
 	}
 
 </style>

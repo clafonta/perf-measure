@@ -11,4 +11,7 @@
 
 <style>
 	* {font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;}
+	main {
+		padding: 0 10px;
+	}
 </style>

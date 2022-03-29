@@ -9,7 +9,7 @@
 {#if type === 'name_and_logo'}
     <FormField>
         <Icon class="material-icons" style="{style}; " >{application_name}</Icon>
-        <span class="m_title" style="{style}">{application_name}</span>
+        <span class="m_title" style="font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;{style}">{application_name}</span>
     </FormField>
 {:else if type === 'other'}
     other
@@ -27,5 +27,11 @@
     }
     .m_case {
         text-transform: uppercase;
+    }
+
+    @media (min-width: 30em) and (max-width: 80em) {
+        .m_title {
+            display: none;
+        }
     }
 </style>
