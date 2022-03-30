@@ -9,7 +9,7 @@
 	import Chip, { Set, Text } from '@smui/chips';
 	import Textfield from '@smui/textfield';
 	let valueA ='';
-
+	let clicked = 0;
 </script>
 <svelte:head>
     <title>Home</title>
@@ -19,8 +19,8 @@
     <div class="section-blurb">
 		<h1>Flexible business solutions that work for you.</h1>
 		<p>
-			<Button color="primary" variant="unelevated">Get started</Button>
-			<Button color="secondary" variant="outlined">Contact sales</Button>
+			<Button color="primary" variant="unelevated" style="margin:2px 0;">Get started</Button>
+			<Button color="secondary" variant="outlined" style="margin:2px 0;">Contact sales</Button>
 		</p>
     </div>
 
@@ -132,10 +132,10 @@
 			<p style="font-size: 25px; font-weight: 900;">Join our email list to receive advice from other business ownerw, support, articles, tips from industry experts, and more.</p>
 		</div>
 		<div style="padding-bottom: 20px;">
-			<Textfield variant="outlined" style="width: 60%" bind:value={valueA} label="Enter your email"
+			<Textfield variant="outlined" style="width: 50%; margin:2px 0;" bind:value={valueA} label="Enter your email"
 					   helperLine$style="width: 100%;">
 			</Textfield>
-			<Button color="primary" variant="unelevated" style="height: 55px;">Get more info</Button>
+			<Button color="primary" variant="unelevated" style="height: 56px; margin:2px 0;">Get more info</Button>
 			<p>* Please refer to our <a href="/about">Privacy Policy </a> or <a href="/contact">contact us</a> for more details.</p>
 		</div>
 	</div>

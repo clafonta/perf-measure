@@ -8,9 +8,7 @@
     import Icon from '@smui/textfield/icon';
     import Button, {Label} from '@smui/button';
     import AppName from '$lib/header/AppName.svelte';
-
-
-
+    import Img from '@zerodevx/svelte-img';
     let selected;
 
     function handleChange() {

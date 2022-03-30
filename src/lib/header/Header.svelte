@@ -22,6 +22,9 @@
 			<li class:active={$page.url.pathname === '/signin'}>
 				<a sveltekit:prefetch href="/signin">Sign in</a>
 			</li>
+			<li class:active={$page.url.pathname === '/lazy'}>
+				<a sveltekit:prefetch href="/lazy">Lazy</a>
+			</li>
 
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
