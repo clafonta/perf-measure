@@ -1,5 +1,4 @@
 <script>
-    import ImageLoader from '$lib/image/ImageLoader.svelte';
     import Accordion, { Panel, Header, Content } from '@smui-extra/accordion';
     import IconButton, { Icon } from '@smui/icon-button';
 
@@ -14,15 +13,12 @@
 </svelte:head>
 
 <section>
-    <h1>About the Lazy page</h1>
+    <h1>About the Lazy Not page</h1>
     <p>
-        This page is designed to focus on measuring the impact to Lighthouse scores
-        specific to <b>lazy loading</b> images. It's also a test on proper implementation of
-        lazy loading when initial content is hidden (e.g. accordion). Compare performance
-        scores with the <a href="/lazynot">not-lazy-loading page.</a>
+        This page <b>does not lazy load images</b>, and created to compare Lighthouse scores with the <a href="/lazy">lazy page</a>.
     </p>
     <p>
-        <ImageLoader src="https://dummyimage.com/620x220/ccc/333333.png" alt="Our image"></ImageLoader>
+        <img src="https://dummyimage.com/620x220/ccc/333333.png" alt="placeholder asset" />
     </p>
     <div class="accordion-container">
         <Accordion>
@@ -37,7 +33,7 @@
                 </Header>
                 <Content>
                     <p>All the retail tools you need for selling online and instore - from inventory management, exchanges, and more.</p>
-                    <ImageLoader src="https://dummyimage.com/420x320/ccc/333333.png" alt="Our image"></ImageLoader>
+                    <img src="https://dummyimage.com/420x320/ccc/333333.png" alt="placeholder asset" />
                     <p>
                         <a href="/about"><span style="margin-bottom: 5px; padding-bottom: 15px;">Learn more</span> <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900; margin: 0; padding: 0;"  slot="trailingIcon">east</Icon></span></a>
                     </p>
@@ -53,7 +49,7 @@
                 </Header>
                 <Content>
                     <p>Tools for front of house, like menus and table management - and back of house, like kitchen displays and delivery.</p>
-                    <ImageLoader src="https://dummyimage.com/320x320/ccc/333333.png" alt="Our image"></ImageLoader>
+                    <img src="https://dummyimage.com/320x320/ccc/333333.png" alt="placeholder asset" />
                     <p>
                         <a href="/about"><span style="margin-bottom: 5px; padding-bottom: 15px;">Learn more</span> <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900; margin: 0; padding: 0;"  slot="trailingIcon">east</Icon></span></a>
                     </p>
@@ -69,7 +65,7 @@
                 </Header>
                 <Content>
                     <p>Integrated tools that help you get paid quickly, deliver better client service, and improve your cash flow.</p>
-                    <ImageLoader src="https://dummyimage.com/220x120/ccc/333333.png" alt="Our image"></ImageLoader>
+                    <img src="https://dummyimage.com/220x120/ccc/333333.png" alt="placeholder asset" />
                     <p>
                         <a href="/about"><span style="margin-bottom: 5px; padding-bottom: 15px;">Learn more</span> <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900; margin: 0; padding: 0;"  slot="trailingIcon">east</Icon></span></a>
                     </p>
@@ -86,11 +82,10 @@
                 </Header>
                 <Content>
                     <p>Build custom solutions and deliver great customer experiences wih advanced reporting and more.</p>
-                    <ImageLoader src="https://dummyimage.com/620x220/ccc/333333.png" alt="Our image"></ImageLoader>
+                    <img src="https://dummyimage.com/620x220/ccc/333333.png" alt="placeholder asset" />
                     <p>
                         <a href="/about"><span style="margin-bottom: 5px; padding-bottom: 15px;">Learn more</span> <span style="size: 8px;"><Icon class="material-icons" style="font-size: 20px; font-weight: 900; margin: 0; padding: 0;"  slot="trailingIcon">east</Icon></span></a>
                     </p>
-
                 </Content>
             </Panel>
         </Accordion>
