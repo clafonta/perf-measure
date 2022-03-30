@@ -1,6 +1,4 @@
 <script>
-
-
     import ImageLoader from '$lib/image/ImageLoader.svelte';
     import Accordion, { Panel, Header, Content } from '@smui-extra/accordion';
     import IconButton, { Icon } from '@smui/icon-button';
@@ -11,15 +9,25 @@
     let panel4Open = false;
 
 </script>
+<svelte:head>
+    <title>Lazy</title>
+</svelte:head>
 
 <section>
+    <h1>About the Lazy page</h1>
+    <p>
+        This page is designed to focus on measuring the impact to Lighthouse scores
+        specific to lazy loading images. It's also a test on proper implemenation of
+        lazy loading when initial content is hiddeng (e.g. accordion).
+
+    </p>
     <div class="accordion-container">
         <Accordion>
 
             <Panel bind:open={panel1Open}>
                 <Header>
                     <span class="font-f">Retail</span>
-                    <IconButton slot="icon" toggle pressed={panel1Open}>
+                    <IconButton slot="icon" toggle pressed={panel1Open} aria-label="Open accordion for details on retail services.">
                         <Icon class="material-icons" on>expand_less</Icon>
                         <Icon class="material-icons">expand_more</Icon>
                     </IconButton>
@@ -35,7 +43,7 @@
             <Panel bind:open={panel2Open}>
                 <Header>
                     <span class="font-f">Food &amp; beverages</span>
-                    <IconButton slot="icon" toggle pressed={panel2Open}>
+                    <IconButton slot="icon" toggle pressed={panel2Open} aria-label="Open accordion for details on food and beverage services.">
                         <Icon class="material-icons" on>expand_less</Icon>
                         <Icon class="material-icons">expand_more</Icon>
                     </IconButton>
@@ -51,7 +59,7 @@
             <Panel bind:open={panel3Open}>
                 <Header>
                     <span class="font-f">Professional services</span>
-                    <IconButton slot="icon" toggle pressed={panel3Open}>
+                    <IconButton slot="icon" toggle pressed={panel3Open} aria-label="Open accordion for details on professional services.">
                         <Icon class="material-icons" on>expand_less</Icon>
                         <Icon class="material-icons">expand_more</Icon>
                     </IconButton>
@@ -68,7 +76,7 @@
                 <Header>
                     <span class="font-f">Large business</span>
                     <!-- <span slot="description">Description of panel 4.</span> -->
-                    <IconButton slot="icon" toggle pressed={panel4Open}>
+                    <IconButton slot="icon" toggle pressed={panel4Open} aria-label="Open accordion for details on Large business.">
                         <Icon class="material-icons" on>expand_less</Icon>
                         <Icon class="material-icons">expand_more</Icon>
                     </IconButton>
@@ -86,14 +94,7 @@
     </div>
 </section>
 <style>
-    .container {
-        width: 280px;
 
-        height: 10px;
-    }
-    .img-container img {
-        max-width: 100%;
-    }
     section {
         display: flex;
         flex-direction: column;
@@ -101,7 +102,7 @@
         align-items: center;
         flex: 1;
         padding-top: 1em;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
         max-width: 800px;
         margin: var(--column-margin-top) auto 0 auto;
     }

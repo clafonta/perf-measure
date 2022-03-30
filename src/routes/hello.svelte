@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-    <title>Home</title>
+    <title>Hello</title>
 </svelte:head>
 
 

@@ -18,7 +18,6 @@
     "@smui/select": "^6.0.0-beta.15",
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "@zerodevx/svelte-img": "^0.1.0-rc1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
@@ -37,6 +36,7 @@
     "@smui/icon-button": "^6.0.0-beta.15",
     "@smui/layout-grid": "^6.0.0-beta.15",
     "@smui/textfield": "^6.0.0-beta.15",
+    "@zerodevx/svelte-img": "^0.1.0-rc1",
     "cookie": "^0.4.1",
     "svelte-meta-tags": "^2.5.1"
   }
