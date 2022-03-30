@@ -4,17 +4,15 @@
 <script lang="ts">
     import LayoutGrid, {Cell} from '@smui/layout-grid';
 	import Icon from '@smui/textfield/icon';
-    import Button, {Label} from '@smui/button';
+    import Button from '@smui/button';
 	import AppName from '$lib/header/AppName.svelte';
 	import Chip, { Set, Text } from '@smui/chips';
 	import Textfield from '@smui/textfield';
-	let valueA ='';
-	let clicked = 0;
+	let valueA = '';
 </script>
 <svelte:head>
     <title>Home</title>
 </svelte:head>
-
 <section>
     <div class="section-blurb">
 		<h1>Flexible business solutions that work for you.</h1>
@@ -23,10 +21,8 @@
 			<Button color="secondary" variant="outlined" style="margin:2px 0;">Contact sales</Button>
 		</p>
     </div>
-
 	<div class="section-blurb">
 		<h1>Tools that connect every side of your business.</h1>
-
 	</div>
 	<div class="section-cards">
     <LayoutGrid>
@@ -210,9 +206,5 @@
         padding: 0;
         margin-bottom: 20px;
     }
-
-
-
-
 
 </style>

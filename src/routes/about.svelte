@@ -22,10 +22,12 @@
 	<h1>About this app</h1>
 
 	<p>
-		This app is used for Lighthouse performance scoring as a baseline. The objective is to set a
-		baseline of performance scoring, measuring HTML, CSS, and content.
+		This app is used for <a href="https://web.dev/performance-scoring/">Lighthouse</a> performance scoring as a baseline.
+		The objective is to set a baseline of performance scoring, measuring HTML, CSS, and content.
 	</p>
+	<h2>About this page - <i>Just content</i></h2>
 	<p>
+
 		The page you're looking at is purely static HTML, with no client-side interactivity needed.
 		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
 		the devtools network panel and reloading.
@@ -33,6 +35,10 @@
 	<p> Once we reach close to 100% on scoring metrics, then we can start layering in JavaScript, images, and
 		third party tools for experimentation, marketing, etc. As we we layer in more tools and SDKs, we then
 		get to measure the negative impact to performance.
+	</p>
+
+	<p> For example, you should compare this bare-bones page with the <a href="gdpr">GDPR</a> page and see the impact to Lighthouse
+		scores after we add a cookie consent control.
 	</p>
 
 
@@ -44,5 +50,9 @@
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
 		padding-bottom: 20px;
+	}
+	.content h2 {
+		font-size: 30px;
+		font-weight: 900;
 	}
 </style>
