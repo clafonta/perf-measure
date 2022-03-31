@@ -29,7 +29,7 @@
         text-transform: uppercase;
     }
 
-    @media (min-width: 30em) and (max-width: 80em) {
+    @media (max-width: 40em) {
         .m_title {
             display: none;
         }
