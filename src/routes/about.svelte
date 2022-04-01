@@ -53,9 +53,9 @@
 
 		</tr>
 		<tr>
-			<td scope="row" data-label="Base"><a href="/lazynot">Static images</a></td>
+			<td data-label="Base"><a href="/lazynot">Static images</a></td>
 			<td data-label="">vs.</td>
-			<td data-label="Dynamic"><a href="/lazynot">Lazy loading images</a></td>
+			<td data-label="Dynamic"><a href="/lazy">Lazy loading images</a></td>
 			<td data-label="Notes">Lazy loading should perform better.</td>
 
 		</tr>
@@ -71,10 +71,6 @@
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
 		padding-bottom: 20px;
-	}
-	.content h2 {
-		font-size: 30px;
-		font-weight: 900;
 	}
 	table {
 		border: 1px solid #ccc;
@@ -163,13 +159,5 @@
 			border-bottom: 0;
 		}
 	}
-
-
-
-
-
-
-
-
 
 </style>

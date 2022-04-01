@@ -8,11 +8,13 @@
 	import AppName from '$lib/header/AppName.svelte';
 	import Chip, { Set, Text } from '@smui/chips';
 	import Textfield from '@smui/textfield';
+	import GTM from '$lib/header/GTM.svelte';
 	let valueA = '';
 </script>
 <svelte:head>
     <title>Home</title>
 </svelte:head>
+<GTM gtmId="GTM-5RNG4CM" />
 <section>
     <div class="section-blurb">
 		<h1>Flexible business solutions that work for you.</h1>

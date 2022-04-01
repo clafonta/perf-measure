@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@beyonk/gdpr-cookie-consent-banner": "^9.0.3",
+    "@beyonk/svelte-google-analytics": "^2.2.0",
     "@playwright/test": "^1.20.0",
     "@smui-extra/accordion": "^6.0.0-beta.15",
     "@smui/image-list": "^6.0.0-beta.15",
