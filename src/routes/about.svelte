@@ -34,13 +34,13 @@
 	</p>
 
 	<table>
-		<caption>Things to compare</caption>
+		<caption>Page Speeds to Compare</caption>
 		<thead>
 		<tr>
 			<th scope="col">Static</th>
 			<th scope="col">vs</th>
 			<th scope="col">Dynamic</th>
-			<th scope="col">Assumptions</th>
+			<th scope="col" width="50%">Learnings</th>
 
 		</tr>
 		</thead>
@@ -49,21 +49,24 @@
 			<td data-label="Base"><a href="/about">About</a></td>
 			<td data-label="">vs.</td>
 			<td data-label="Dynamic"><a href="/gdpr">GDPR / Cookie Consent</a></td>
-			<td data-label="notes">There shouldn't be a big difference. </td>
+			<td data-label="notes">No significant difference in Lighthouse performance score since this JavaScript utility is
+			not blocking for rendering or interactivity.</td>
 
 		</tr>
 		<tr>
 			<td data-label="Base"><a href="/lazynot">Static images</a></td>
 			<td data-label="">vs.</td>
 			<td data-label="Dynamic"><a href="/lazy">Lazy loading images</a></td>
-			<td data-label="Notes">Lazy loading should perform better.</td>
+			<td data-label="Notes">Not lazy loading images takes a <span style="color:red">-5pt</span>
+				hit on Lighthouse performance score.</td>
 
 		</tr>
 		<tr>
 			<td data-label="Base"><a href="/about">About</a></td>
 			<td data-label="">vs.</td>
 			<td data-label="Dynamic"><a href="/experiment">Experiment</a></td>
-			<td data-label="notes">The experiment page should be slower.</td>
+			<td data-label="notes">The experiment page is slower, with a <span style="color:red">-10pt</span>
+				on Lighthouse performance score compared to the basic About page.</td>
 		</tr>
 
 		</tbody>
@@ -137,6 +140,7 @@
 			padding: 0;
 			position: absolute;
 			width: 1px;
+			font-weight: 900;
 		}
 
 		table tr {
@@ -150,6 +154,7 @@
 			display: block;
 			font-size: .8em;
 			text-align: right;
+			margin-left: 20px;
 		}
 
 

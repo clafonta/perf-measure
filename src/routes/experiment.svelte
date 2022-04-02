@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Experiment A</title>
+    <title>Experiment Page</title>
 </svelte:head>
 <GoogleOptimize />
 <GTM gtmId="GTM-5RNG4CM" />
