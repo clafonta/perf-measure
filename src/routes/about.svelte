@@ -59,6 +59,12 @@
 			<td data-label="Notes">Lazy loading should perform better.</td>
 
 		</tr>
+		<tr>
+			<td data-label="Base"><a href="/about">About</a></td>
+			<td data-label="">vs.</td>
+			<td data-label="Dynamic"><a href="/experiment">Experiment</a></td>
+			<td data-label="notes">The experiment page should be slower.</td>
+		</tr>
 
 		</tbody>
 	</table>
