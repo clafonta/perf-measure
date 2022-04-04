@@ -41,6 +41,7 @@
     "@smui/textfield": "^6.0.0-beta.15",
     "@zerodevx/svelte-img": "^0.1.0-rc1",
     "cookie": "^0.4.1",
+    "flag-icons-svg": "^0.0.3",
     "svelte-flagicon": "^0.2.0",
     "svelte-flagpack": "^1.0.0",
     "svelte-meta-tags": "^2.5.1",

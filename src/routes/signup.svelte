@@ -6,8 +6,9 @@
     import Checkbox from '@smui/checkbox';
     import FormField from '@smui/form-field';
     import AppName from '$lib/header/AppName.svelte';
+
     import Select, { Option } from '@smui/select';
-    import HelperText from '@smui/textfield/helper-text';
+    import { Us, Ca, Au } from "svelte-flagicon";
 
     let isPasswordVisible = false;
     let valueA = '';
@@ -16,9 +17,12 @@
     let checked = false;
     let valueHelperText = '';
 
+
     let countrylist = [
-        { code: 'us', name: 'United States' },
-        { code: 'ca', name: 'Canada' }
+        { id: 'Us', name: 'United States' },
+        { id: 'Ca', name: 'Canada' },
+        { id: 'Au', name: 'Australia'}
+
     ];
 
 
@@ -37,9 +41,15 @@
         }
     }
 </script>
+
+<div>
+
+</div>
+
 <svelte:head>
     <title>Sign up</title>
 </svelte:head>
+
 <LayoutGrid class="content">
     <Cell spanDevices={{ desktop: 12, tablet: 8, phone: 4 }}>
         <div class="content">
@@ -70,9 +80,19 @@
             <div class="signin-field">
                 <Select style="width:100%" variant="outlined" bind:value={valueHelperText}  label="Country">
                     {#each countrylist as country}
-                        <Option value={country.code}>
-                            <span style="font-size: 0.8em;"> {country.name} </span>
-                        </Option>
+                        {#if country.id === 'Us'}
+                            <Option value={country.id}>
+                                <Us size="18" round /><span class="country-name"> {country.name}</span>
+                            </Option>
+                        {:else if country.id === 'Ca'}
+                            <Option value={country.id}>
+                                <Ca round size="16" square="false" /><span class="country-name"> {country.name}</span>
+                            </Option>
+                        {:else if country.id === 'Au'}
+                            <Option value={country.id}>
+                                <Au round size="26" square="false" /><span class="country-name"> {country.name}</span>
+                            </Option>
+                        {/if}
                     {/each}
                 </Select>
 
@@ -120,8 +140,9 @@
         padding: 0;
         margin: 0;
     }
-
-
+    .country-name {
+        padding-left: 10px;
+    }
     .content {
         width: 100%;
         max-width: var(--column-width);
