@@ -82,11 +82,11 @@
                     {#each countrylist as country}
                         {#if country.id === 'Us'}
                             <Option value={country.id}>
-                                <Us size="18" round /><span class="country-name"> {country.name}</span>
+                                <Us size="26" round /><span class="country-name"> {country.name}</span>
                             </Option>
                         {:else if country.id === 'Ca'}
                             <Option value={country.id}>
-                                <Ca round size="16" square="false" /><span class="country-name"> {country.name}</span>
+                                <Ca round size="26" square="false" /><span class="country-name"> {country.name}</span>
                             </Option>
                         {:else if country.id === 'Au'}
                             <Option value={country.id}>
