@@ -68,6 +68,13 @@
 			<td data-label="notes">The experiment page is slower, with a <span style="color:red">-10pt</span>
 				on Lighthouse performance score compared to the basic About page.</td>
 		</tr>
+		<tr>
+			<td data-label="Base"><a href="/about">About</a></td>
+			<td data-label="">vs.</td>
+			<td data-label="Dynamic"><a href="/marketing">Marketing</a></td>
+			<td data-label="notes">The marketing page includes Google Tag Manager and is slower, with a <span style="color:red">-10pt</span>
+				on Lighthouse performance score compared to the basic About page.</td>
+		</tr>
 
 		</tbody>
 	</table>

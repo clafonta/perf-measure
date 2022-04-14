@@ -1,4 +1,7 @@
 module.exports = {
+    /* To run: from the root directory, run
+    * >  lhci autorun
+    */
     ci: {
         collect: {
             /* Add configuration here */
