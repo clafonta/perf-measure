@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="Svelte demo app" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign in</title><meta name="robots" content="index,follow" data-svelte="svelte-1v2a5gq"><meta name="googlebot" content="index,follow" data-svelte="svelte-1v2a5gq"><meta name="description" content="This example uses more of the available config options." data-svelte="svelte-1v2a5gq"><link rel="canonical" href="https://www.canonical.ie/" data-svelte="svelte-1v2a5gq"><meta name="twitter:card" content="summary_large_image" data-svelte="svelte-1v2a5gq">
+    <meta name="twitter:site" content="@site" data-svelte="svelte-1v2a5gq">
+    <meta name="twitter:creator" content="@handle" data-svelte="svelte-1v2a5gq">
+    <meta name="twitter:title" content="Using More of Config" data-svelte="svelte-1v2a5gq">
+    <meta name="twitter:description" content="This example uses more of the available config options." data-svelte="svelte-1v2a5gq">
+    <meta name="twitter:image" content="https://www.example.ie/twitter-image.jpg" data-svelte="svelte-1v2a5gq">
+    <meta name="twitter:image:alt" content="Twitter image alt" data-svelte="svelte-1v2a5gq"><meta property="fb:app_id" content="1234567890" data-svelte="svelte-1v2a5gq"><meta property="og:url" content="https://www.url.ie/a" data-svelte="svelte-1v2a5gq">
+    <meta property="og:title" content="Open Graph Title" data-svelte="svelte-1v2a5gq">
+    <meta property="og:description" content="Open Graph Description" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image" content="https://www.example.ie/og-image-01.jpg" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image:alt" content="Og Image Alt" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image:width" content="800" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image:height" content="600" data-svelte="svelte-1v2a5gq"><meta property="og:image" content="https://www.example.ie/og-image-02.jpg" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image:alt" content="Og Image Alt Second" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image:width" content="900" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image:height" content="800" data-svelte="svelte-1v2a5gq"><meta property="og:image" content="https://www.example.ie/og-image-03.jpg" data-svelte="svelte-1v2a5gq">
+    <meta property="og:image" content="https://www.example.ie/og-image-04.jpg" data-svelte="svelte-1v2a5gq">
+    <meta property="og:site_name" content="SiteName" data-svelte="svelte-1v2a5gq">
+    <style data-svelte>.m_title.s-Rhhvx7EruwIG{text-transform:capitalize;font-weight:bold;text-shadow:4px 4px #ccc}.m_case.s-Rhhvx7EruwIG{text-transform:uppercase}@media(max-width: 40em){.m_title.s-Rhhvx7EruwIG{display:none}}.s-Rhhvx7EruwIG{}
+    .simplename.simplename{font-family:Century Gothic,CenturyGothic,AppleGothic,sans-serif}header.simplename.simplename{display:flex;justify-content:space-between}.corner.simplename.simplename{width:3em;height:3em}.corner.simplename a.simplename{width:100%;height:100%}nav.simplename.simplename{display:flex;justify-content:center;--background:rgba(255, 255, 255, 0.7)}svg.simplename.simplename{width:2em;height:3em;display:block}path.simplename.simplename{fill:var(--background)}ul.simplename.simplename{position:relative;padding:0;margin:0;height:3em;display:flex;justify-content:center;align-items:center;list-style:none;background:var(--background);background-size:contain}li.simplename.simplename{position:relative;height:100%}li.active.simplename.simplename::before{--size:6px;content:'';width:0;height:0;position:absolute;top:0;left:calc(50% - var(--size));border:var(--size) solid transparent;border-top:var(--size) solid var(--accent-color)}nav.simplename a.simplename{display:flex;height:100%;align-items:center;padding:0 1em;color:var(--heading-color);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;transition:color 0.2s linear}a.simplename.simplename:hover{color:var(--accent-color)}.simplename.simplename{}
+    .s-llc3ExEW13Oc.s-llc3ExEW13Oc{font-family:'Raleway', sans-serif}.info.s-llc3ExEW13Oc.s-llc3ExEW13Oc{font-size:0.8em}.info.s-llc3ExEW13Oc ul.s-llc3ExEW13Oc{list-style-type:none;padding:0;margin:0}.info.s-llc3ExEW13Oc ul li.s-llc3ExEW13Oc{padding:6px 0;margin:0}.divide.s-llc3ExEW13Oc.s-llc3ExEW13Oc{min-height:40px;border-top:2px solid #ccc;border-bottom:2px solid #ccc;font-size:2em;color:#ccc}footer.s-llc3ExEW13Oc.s-llc3ExEW13Oc{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0;background-color:#444444;color:#edf0f8}@media(min-width: 480px){footer.s-llc3ExEW13Oc.s-llc3ExEW13Oc{padding:40px;margin:0}}.s-llc3ExEW13Oc.s-llc3ExEW13Oc{}
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    :root {
+        font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+        Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        --font-mono: 'Fira Mono', monospace;
+        --pure-white: #ffffff;
+        --primary-color: #b9c6d2;
+        --secondary-color: #d0dde9;
+        --tertiary-color: #edf0f8;
+        --accent-color: #ba55d3;
+        --heading-color: rgba(0, 0, 0, 0.7);
+        --text-color: #444444;
+        --background-without-opacity: rgba(255, 255, 255, 0.7);
+        --column-width: 42rem;
+        --column-margin-top: 2rem;
+        --column-margin-bottom: 2rem;
+    }
+
+    body {
+        min-height: 100vh;
+        margin: 0;
+        background-color: var(--primary-color);
+        background: linear-gradient(
+                180deg,
+                var(--primary-color) 0%,
+                var(--secondary-color) 10.45%,
+                var(--tertiary-color) 41.35%
+        );
+    }
+
+    body::before {
+        content: '';
+        width: 80vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 10vw;
+        z-index: -1;
+        background: radial-gradient(
+                50% 50% at 50% 50%,
+                var(--pure-white) 0%,
+                rgba(255, 255, 255, 0) 100%
+        );
+        opacity: 0.05;
+    }
+
+    #svelte {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1,
+    h2,
+    p {
+        font-weight: 400;
+        color: var(--heading-color);
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+    a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    pre {
+        font-size: 16px;
+        font-family: var(--font-mono);
+        background-color: rgba(255, 255, 255, 0.45);
+        border-radius: 3px;
+        box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+        padding: 0.5em;
+        overflow-x: auto;
+        color: var(--text-color);
+    }
+
+    input,
+    button {
+        font-size: inherit;
+        font-family: inherit;
+    }
+
+    button:focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    @media (min-width: 720px) {
+        h1 {
+            font-size: 2.4rem;
+        }
+    }
+
+    .s-PoaHcXV6SIWL{font-family:Century Gothic,CenturyGothic,AppleGothic,sans-serif}main.s-PoaHcXV6SIWL{padding:0 10px}.s-PoaHcXV6SIWL{}
+    .signin-field.s-PH2NogqkOSUO.s-PH2NogqkOSUO{padding-bottom:14px}.signin-content.s-PH2NogqkOSUO.s-PH2NogqkOSUO{padding-bottom:2em}.signin-content.s-PH2NogqkOSUO h1.s-PH2NogqkOSUO{text-align:left;font-size:2em;font-weight:bolder}.signin-content.s-PH2NogqkOSUO p.s-PH2NogqkOSUO{text-align:left;font-size:1.5em;padding:0;margin:0}.content.s-PH2NogqkOSUO.s-PH2NogqkOSUO{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto}.s-PH2NogqkOSUO.s-PH2NogqkOSUO{}
+    </style>
+</head>
+<body id="x">
+<div>
+    <header class="simplename">
+        <div class="corner simplename">
+            <a href="/" class="simplename" aria-label="Read more about xyz">
+                <div class="mdc-form-field">
+                    <i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 20px; color: #ba55d3; ; ">anchor</i>
+                    <span class="m_title s-Rhhvx7EruwIG" style="font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;font-size: 20px; color: #ba55d3; ">anchor</span>
+                </div>
+            </a>
+        </div>
+        <nav class="simplename"><svg viewBox="0 0 2 3" aria-hidden="true" class="simplename"><path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="simplename"></path></svg>
+            <ul class="simplename"><li class="simplename"><a sveltekit:prefetch href="/" class="simplename">Home</a></li>
+                <li class="simplename"><a sveltekit:prefetch href="/about" class="simplename">About</a></li>
+                <li class="simplename active"><a sveltekit:prefetch href="/signin" class="simplename">Sign in</a></li></ul>
+            <svg viewBox="0 0 2 3" aria-hidden="true" class="simplename"><path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="simplename"></path></svg></nav>
+
+        <div class="corner simplename"></div>
+    </header>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet" type="text/css" media="screen,handheld" class="simplename">
+    <link href="https://unpkg.com/svelte-material-ui/bare.css" rel="stylesheet" type="text/css" media="screen,handheld" class="simplename">
+    <main class="s-PoaHcXV6SIWL">
+        <div class="content mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                    <div class="content s-PH2NogqkOSUO">
+                        <div class="signin-content s-PH2NogqkOSUO">
+                            <h1 class="s-PH2NogqkOSUO">STATIC PAGE</h1>
+                            <p class="s-PH2NogqkOSUO">This page does not contain javascript or include GTM containers. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="s-llc3ExEW13Oc">
+        <div class="mdc-layout-grid"><div class="mdc-layout-grid__inner"><div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;">Payments</span>
+            <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+            <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Payments</li>
+                <li class="s-llc3ExEW13Oc">In Person</li>
+                <li class="s-llc3ExEW13Oc">By Invoice</li>
+                <li class="s-llc3ExEW13Oc">On Your Computer</li>
+                <li class="s-llc3ExEW13Oc">On Your Website</li>
+                <li class="s-llc3ExEW13Oc">Risk Manager</li>
+                <li class="s-llc3ExEW13Oc">Payment Platform</li>
+                <li class="s-llc3ExEW13Oc">Payments Security</li>
+                <li class="s-llc3ExEW13Oc">Transfers</li>
+                <li class="s-llc3ExEW13Oc">Merchant Services</li></ul></div>
+        </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;">Point of Sale</span>
+                <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+                <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Point of Sale Overview</li>
+                    <li class="s-llc3ExEW13Oc"><span class="m_case s-Rhhvx7EruwIG" style="">anchor</span> Point of Sale</li>
+                    <li class="s-llc3ExEW13Oc"><span class="m_case s-Rhhvx7EruwIG" style="">anchor</span> for Restaurants</li>
+                    <li class="s-llc3ExEW13Oc"><span class="m_case s-Rhhvx7EruwIG" style="">anchor</span> for Retail</li>
+                    <li class="s-llc3ExEW13Oc"><span class="m_case s-Rhhvx7EruwIG" style="">anchor</span> Appointments</li></ul></div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;">Hardware</span>
+                <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+                <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Reader for Magstripe</li>
+                    <li class="s-llc3ExEW13Oc">Contactless (NFC) &amp; Chip Reader</li>
+                    <li class="s-llc3ExEW13Oc">Terminal</li>
+                    <li class="s-llc3ExEW13Oc">Register</li>
+                    <li class="s-llc3ExEW13Oc">Shop Hardware</li>
+                    <li class="s-llc3ExEW13Oc">Rent Hardware</li>
+                    <li class="s-llc3ExEW13Oc">Buy in Store</li>
+                    <li class="s-llc3ExEW13Oc">Compare Hardware</li></ul></div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;">More Tools</span>
+                <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+                <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Online Store</li>
+                    <li class="s-llc3ExEW13Oc">Online Checkout</li>
+                    <li class="s-llc3ExEW13Oc">Checking</li>
+                    <li class="s-llc3ExEW13Oc">Loans</li>
+                    <li class="s-llc3ExEW13Oc">Savings</li>
+                    <li class="s-llc3ExEW13Oc">Payroll</li>
+                    <li class="s-llc3ExEW13Oc">Team Management</li>
+                    <li class="s-llc3ExEW13Oc">Marketing</li>
+                    <li class="s-llc3ExEW13Oc">SMS Marketing</li>
+                    <li class="s-llc3ExEW13Oc">Messages</li>
+                    <li class="s-llc3ExEW13Oc">Loyalty</li>
+                    <li class="s-llc3ExEW13Oc">Dashboard</li>
+                    <li class="s-llc3ExEW13Oc">Gift Cards</li>
+                    <li class="s-llc3ExEW13Oc">Customer Directory</li>
+                    <li class="s-llc3ExEW13Oc">Inventory Management</li>
+                    <li class="s-llc3ExEW13Oc">Photo Studio</li>
+                    <li class="s-llc3ExEW13Oc">Square KDS</li></ul></div>
+            </div>
+
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;">Developers</span>
+                <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+                <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Developer Platform</li>
+                    <li class="s-llc3ExEW13Oc">Reader SDK</li>
+                    <li class="s-llc3ExEW13Oc">In-App Payments SDK</li>
+                    <li class="s-llc3ExEW13Oc">Online Payments APIs</li>
+                    <li class="s-llc3ExEW13Oc">Documentation</li>
+                    <li class="s-llc3ExEW13Oc">Developer Dashboard</li></ul></div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;">Resources</span>
+                <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+                <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Pricing</li>
+                    <li class="s-llc3ExEW13Oc">Contact Sales</li>
+                    <li class="s-llc3ExEW13Oc">Support Center</li>
+                    <li class="s-llc3ExEW13Oc">App Marketplace</li>
+                    <li class="s-llc3ExEW13Oc">Small Business Development</li>
+                    <li class="s-llc3ExEW13Oc">Blog</li>
+                    <li class="s-llc3ExEW13Oc">Guides</li>
+                    <li class="s-llc3ExEW13Oc">Seller Community</li>
+                    <li class="s-llc3ExEW13Oc">Events</li>
+                    <li class="s-llc3ExEW13Oc">Service Status</li>
+                    <li class="s-llc3ExEW13Oc"></li>
+                    <li class="s-llc3ExEW13Oc"></li>
+                    <li class="s-llc3ExEW13Oc"></li>
+                    <li class="s-llc3ExEW13Oc"></li>
+                    <li class="s-llc3ExEW13Oc"></li>
+                    <li class="s-llc3ExEW13Oc"></li></ul></div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;">Business Types</span>
+                <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+                <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Large businesses</li>
+                    <li class="s-llc3ExEW13Oc">Retail</li>
+                    <li class="s-llc3ExEW13Oc">CBD Retail</li>
+                    <li class="s-llc3ExEW13Oc">Coffee Shops</li>
+                    <li class="s-llc3ExEW13Oc">Quick Service</li>
+                    <li class="s-llc3ExEW13Oc">Full Service</li>
+                    <li class="s-llc3ExEW13Oc">Bars &amp; Breweries</li>
+                    <li class="s-llc3ExEW13Oc">Beauty Professionals</li>
+                    <li class="s-llc3ExEW13Oc">Health &amp; Fitness</li>
+                    <li class="s-llc3ExEW13Oc">Home &amp; Repair Services</li>
+                    <li class="s-llc3ExEW13Oc">Professional Services</li></ul></div>
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><div class="s-llc3ExEW13Oc"><span class="merchant-type-name s-llc3ExEW13Oc" style="font-size: 1.5em;"><span class="m_case s-Rhhvx7EruwIG" style="">anchor</span></span>
+                <span class="merchant-type-icon s-llc3ExEW13Oc"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true" style="font-size: 1em;" slot="trailingIcon">south</i></span></div>
+                <ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Home</li>
+                    <li class="s-llc3ExEW13Oc">About</li>
+                    <li class="s-llc3ExEW13Oc">Press and Media</li>
+                    <li class="s-llc3ExEW13Oc">Investor Relations</li>
+                    <li class="s-llc3ExEW13Oc">Affiliate Program</li>
+                    <li class="s-llc3ExEW13Oc">Partner with Square</li>
+                    <li class="s-llc3ExEW13Oc">Careers</li>
+                    <li class="s-llc3ExEW13Oc">Developers</li>
+                    <li class="s-llc3ExEW13Oc">Employment Verification</li></ul></div>
+            </div>
+
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-6-phone"><div class="divide s-llc3ExEW13Oc"><div class="mdc-form-field" style="color: #ccc; font-size: 16px;"><i class="material-icons mdc-text-field__icon mdc-text-field__icon--trailing" tabindex="-1" aria-hidden="true">language</i>
+                <span class="s-llc3ExEW13Oc">Unites States (English)</span>
+                <label for="SMUI-form-field-21"></label>
+            </div></div>
+            </div>
+
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-2-phone"><div class="info s-llc3ExEW13Oc"><ul class="s-llc3ExEW13Oc"><li class="s-llc3ExEW13Oc">Privacy Notice</li>
+                <li class="s-llc3ExEW13Oc">Additional California Privacy Disclosure</li>
+                <li class="s-llc3ExEW13Oc">Terms of Service</li>
+                <li class="s-llc3ExEW13Oc">Investor Relations</li>
+                <li class="s-llc3ExEW13Oc">Licensesm</li>
+                <li class="s-llc3ExEW13Oc">Government</li>
+                <li class="s-llc3ExEW13Oc">Square Capital, LLC Licenses</li>
+                <li class="s-llc3ExEW13Oc">Block, Inc.</li></ul></div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+    </div>
+</body>
+</html>
